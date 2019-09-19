@@ -28,7 +28,7 @@ os_mac(){
 	sudo systemsetup -setusingnetworktime off
 	for i in $(seq 1 $1)
 	do
-		echo "\n-------------------------------" >> log.txt
+		# echo "\n-------------------------------" >> log.txt
 		op_random
 		echo "$(($1-$i))\t\c"
 		time=`date -v-2d +%m:%d:%Y`
@@ -41,7 +41,7 @@ os_mac(){
 os_linux(){
 	for i in $(seq 1 $1)
 	do
-		echo "\n-------------------------------" >> log.txt
+		# echo "\n-------------------------------" >> log.txt
 		op_random
 		echo "$(($1-$i))\t\c"
 		time=`date +'%G-%m-%d %H:%M:%S' -d '-1 days'`
