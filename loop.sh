@@ -19,6 +19,7 @@ echo `date +"%Y%m%d_%H%M%S"` $i $j>> log.txt
 for i in $(seq 1 $j)
 do
 	# echo >> log.txt
+	echo
 	op_git
 done
 }
@@ -33,7 +34,7 @@ os_mac(){
 		time=`date -v-2d +%m:%d:%Y`
 		sudo systemsetup -setdate "$time"
 	done
-	sudo systemsetup -setusingnetworktime on
+	# sudo systemsetup -setusingnetworktime on
 }
 
 
