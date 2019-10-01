@@ -8,7 +8,7 @@ echo $1
 op_git(){
 	git pull 1>>/dev/null 2>&1
 	git commit -a -m 'git auto commit' 1>>/dev/null 2>&1
-	git push origin master 1>>/dev/null
+	git push origin master 2>>/dev/null
 	sleep $((RANDOM/8000))
 }
 
