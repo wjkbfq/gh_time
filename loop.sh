@@ -18,7 +18,7 @@ j=$((j%3+1))
 echo `date +"%Y%m%d_%H%M%S"` $i $j>> log.txt
 for i in $(seq 1 $j)
 do
-	echo >> log.txt
+	# echo >> log.txt
 	op_git
 done
 }
