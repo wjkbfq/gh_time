@@ -61,9 +61,8 @@ op_patch(){
 	fi
 }
 
-if [ $1 -eq 0 ]; then
-	echo 'ERROR: Need to apply loop param'
-	exit
+if [ $1 -eq 0 ]; then op_random
+	else op_patch
 fi
 
 
