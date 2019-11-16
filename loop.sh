@@ -61,7 +61,7 @@ op_patch(){
 	fi
 }
 
-if [ ! $1 ]; then
+if [ $1 -eq 0 ]; then
 	echo 'ERROR: Need to apply loop param'
 	exit
 fi
