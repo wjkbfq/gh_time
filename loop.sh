@@ -49,18 +49,22 @@ os_linux(){
 	done
 }
 
+op_patch(){
+	os=$(uname -s)
+	if [[ "$os" == "Linux" ]]; then
+		os_linux $1
+	elif [[ "$os" == "Darwin" ]]; then
+		os_mac $1
+	else
+		echo "unknown OS"
+		exit 1
+	fi
+}
 
-
-os=$(uname -s)
-if [[ "$os" == "Linux" ]]; then
-	os_linux $1
-elif [[ "$os" == "Darwin" ]]; then
-	os_mac $1
-else
-	echo "unknown OS"
-	exit 1
+if [ ! $1 ]; then
+	echo 'ERROR: Need to apply loop param'
+	exit
 fi
 
-op_
 
 echo "done"
