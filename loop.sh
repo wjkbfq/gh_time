@@ -9,7 +9,7 @@ op_git(){
 	git pull 1>>/dev/null 2>&1
 	git commit -a -m 'git auto commit' 1>>/dev/null 2>&1
 	git push origin master 1>>log.txt 2>&1
-	sleep $((RANDOM/5000))
+	sleep $((RANDOM/8000))
 }
 
 os_mac(){
@@ -18,14 +18,14 @@ os_mac(){
 	do
 		echo "\n-------------------------------" >> log.txt
 		j=`date +"%s"`
-		j=$((j%5+1))
+		j=$((j%3+1))
 		echo `date +"%Y%m%d_%H%M%S"` $i $j>> log.txt
 		for i in $(seq 1 $j)
 		do
 			echo >> log.txt
 			op_git
 		done
-		time=`date -v-3d +%m:%d:%Y`
+		time=`date -v-2d +%m:%d:%Y`
 		echo "$(($1-$i))\t\c"
 		sudo systemsetup -setdate "$time"
 	done
