@@ -1,10 +1,7 @@
 
-j=`date +"%s"`
-j=$((j%5))
-echo $j
-for i in $(seq 0 1 $j)
+for i in $(seq 0 1 10)
 do
-	echo $i
+	echo $((RANDOM/3000))
 done 
 
 
