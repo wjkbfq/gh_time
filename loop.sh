@@ -24,7 +24,7 @@ os_mac(){
 			echo >> log.txt
 			op_git
 		done
-		time=`date -v-2d +%m:%d:%Y`
+		time=`date -v-3d +%m:%d:%Y`
 		echo "$(($1-$i))\t\c"
 		sudo systemsetup -setdate "$time"
 	done
