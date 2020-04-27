@@ -1,38 +1,6 @@
 To github.com:wjkbfq/gh_time.git
-   01ffe2f..8e80bb9  master -> master
-
-To github.com:wjkbfq/gh_time.git
-   8e80bb9..603b944  master -> master
+   649fa38..60ea5f1  master -> master
 
 -------------------------------
-20200501_114443 2 4 
-
-
-To github.com:wjkbfq/gh_time.git
-   603b944..50ba53d  master -> master
-
-To github.com:wjkbfq/gh_time.git
-   50ba53d..44111c9  master -> master
-
-To github.com:wjkbfq/gh_time.git
-   44111c9..75b05ea  master -> master
-
-To github.com:wjkbfq/gh_time.git
-   75b05ea..0e5c0ae  master -> master
-
--------------------------------
-20200429_114509 3 5 
-
-
-To github.com:wjkbfq/gh_time.git
-   0e5c0ae..94750b9  master -> master
-
-To github.com:wjkbfq/gh_time.git
-   94750b9..a02d95b  master -> master
-
-To github.com:wjkbfq/gh_time.git
-   a02d95b..e47ae38  master -> master
-
--------------------------------
-20200429_114535 1 1 
+20200427_114542 2 3 
 
