@@ -15,14 +15,14 @@ os_mac(){
 	sudo systemsetup -setusingnetworktime off
 	for i in $(seq 1 $1)
 	do
-		echo "\n-------------------------------" >> log.txt
+		echo "-------------------------------" >> log.txt
 		j=`date +"%s"`
 		j=$((j%5+1))
 		echo `date +"%Y%m%d_%H%M%S"` $i $j "\n">> log.txt
 		for i in $(seq 1 $j)
 		do
-			echo >> log.txt
 			op_git
+			echo >> log.txt
 		done
 		time=`date -v-2d +%m:%d:%Y`
 		echo "$(($1-$i))\t\c"
