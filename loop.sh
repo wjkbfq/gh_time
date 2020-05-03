@@ -6,8 +6,8 @@ fi
 echo $1
 
 op_git(){
-	git pull 1>>log.txt 2>&1
-	git commit -a -m 'git auto commit' 1>>log.txt 2>&1
+	git pull 1>>/dev/null 2>&1
+	git commit -a -m 'git auto commit' 1>>/dev/null 2>&1
 	git push origin master 1>>log.txt 2>&1
 }
 
@@ -21,7 +21,7 @@ os_mac(){
 		echo `date +"%Y%m%d_%H%M%S"` $i $j "\n">> log.txt
 		for i in $(seq 1 $j)
 		do
-			echo "\n" >> log.txt
+			echo >> log.txt
 			op_git
 		done
 		time=`date -v-2d +%m:%d:%Y`
