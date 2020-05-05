@@ -18,7 +18,7 @@ os_mac(){
 		echo "\n-------------------------------" >> log.txt
 		j=`date +"%s"`
 		j=$((j%5+1))
-		echo `date +"%Y%m%d_%H%M%S"` $i " " $j "\n">> log.txt
+		echo `date +"%Y%m%d_%H%M%S"` $i $j "\n">> log.txt
 		for i in $(seq 1 $j)
 		do
 			echo "\n" >> log.txt
