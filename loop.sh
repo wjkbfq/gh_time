@@ -10,7 +10,7 @@ os_mac(){
 	for i in $(seq 1 $1)
 	do
 		echo "\n-------------------------------" >> log.txt
-		echo `date +"%Y%m%d_%H%M%S"` $i >> log.txt
+		echo `date +"%Y%m%d_%H%M%S"` $i "\n">> log.txt
 		git pull 1>>log.txt 2>&1
 		git commit -a -m 'git auto commit' 1>>log.txt 2>&1
 		git push origin master 1>>log.txt 2>&1
