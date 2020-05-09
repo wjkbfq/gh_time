@@ -21,6 +21,7 @@ os_mac(){
 		echo `date +"%Y%m%d_%H%M%S"` $i " " $j "\n">> log.txt
 		for i in $(seq 1 $j)
 		do
+			echo "\n" >> log.txt
 			op_git
 		done
 		time=`date -v-2d +%m:%d:%Y`
