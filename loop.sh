@@ -5,21 +5,31 @@ if [ ! $1 ]; then
 fi
 echo $1
 
+op_git(){
+	git pull 1>>log.txt 2>&1
+	git commit -a -m 'git auto commit' 1>>log.txt 2>&1
+	git push origin master 1>>log.txt 2>&1
+}
+
 os_mac(){
 	sudo systemsetup -setusingnetworktime off
 	for i in $(seq 1 $1)
 	do
 		echo "\n-------------------------------" >> log.txt
-		echo `date +"%Y%m%d_%H%M%S"` $i "\n">> log.txt
-		git pull 1>>log.txt 2>&1
-		git commit -a -m 'git auto commit' 1>>log.txt 2>&1
-		git push origin master 1>>log.txt 2>&1
-		time=`date -v-1d +%m:%d:%Y`
+		j=`date +"%s"`
+		j=$((j%5+1))
+		echo `date +"%Y%m%d_%H%M%S"` $i " " $j "\n">> log.txt
+		for i in $(seq 1 $j)
+		do
+			op_git
+		done
+		time=`date -v-2d +%m:%d:%Y`
 		echo "$(($1-$i))\t\c"
 		sudo systemsetup -setdate "$time"
 	done
 	sudo systemsetup -setusingnetworktime on
 }
+
 
 os_linux(){
 	for i in $(seq 1 $1)
