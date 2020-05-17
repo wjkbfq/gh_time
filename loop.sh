@@ -62,7 +62,7 @@ op_patch(){
 }
 
 if [ $1 -eq 0 ]; then op_random
-	else op_patch
+	else op_patch $1
 fi
 
 
