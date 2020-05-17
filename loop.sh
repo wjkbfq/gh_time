@@ -15,7 +15,7 @@ os_mac(){
 		git commit -a -m 'git auto commit' 1>>log.txt 2>&1
 		git push origin master 1>>log.txt 2>&1
 		time=`date -v-1d +%m:%d:%Y`
-		echo "$(($1-$i)) \t \c"
+		echo "$(($1-$i))\t\c"
 		sudo systemsetup -setdate "$time"
 	done
 	sudo systemsetup -setusingnetworktime on
