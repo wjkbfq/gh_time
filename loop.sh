@@ -9,14 +9,13 @@ os_mac(){
 	sudo systemsetup -setusingnetworktime off
 	for i in $(seq 1 $1)
 	do
-		echo "---------------------------" >> log.txt
-		echo $(($1-$i)) `date +"%Y%m%d_%H%M%S"` >> log.txt
-		echo "---------------------------" >> log.txt
-		git pull
-		git commit -a -m 'git auto commit'
-		git push origin master
+		echo "===========================" >> log.txt
+		echo `date +"%Y%m%d_%H%M%S"` $i >> log.txt
+		git pull 1>>log.txt 2>&1
+		git commit -a -m 'git auto commit' 1>>log.txt 2>&1
+		git push origin master 1>>log.txt 2>&1
 		time=`date -v-1d +%m:%d:%Y`
-		sudo systemsetup -setdate "$time"
+		sudo systemsetup -setdate "$time" 1>>log.txt 2>&1
 		echo $(($1-$i))
 	done
 	sudo systemsetup -setusingnetworktime on
